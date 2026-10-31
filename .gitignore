@@ -1,0 +1,10 @@
+.xj-cursor/
+build/
+DerivedData/
+*.xcodeproj/
+*.xcworkspace/
+App/Support/Info.plist
+Packages/MeihuaCore/.build/
+Packages/MeihuaCore/.swiftpm/
+*.ipa
+.DS_Store

@@ -1,0 +1,57 @@
+name: MeihuaToolbox
+options:
+  bundleIdPrefix: com.hh1920692708
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    TARGETED_DEVICE_FAMILY: "1,2"
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+packages:
+  MeihuaCore:
+    path: Packages/MeihuaCore
+targets:
+  MeihuaToolbox:
+    type: application
+    platform: iOS
+    sources:
+      - path: App
+    dependencies:
+      - package: MeihuaCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.hh1920692708.meihuatoolbox
+        PRODUCT_NAME: MeihuaToolbox
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        GENERATE_INFOPLIST_FILE: NO
+        CODE_SIGN_STYLE: Manual
+    info:
+      path: App/Support/Info.plist
+      properties:
+        CFBundleDisplayName: 美化工具箱
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        LSRequiresIPhoneOS: true
+        UIFileSharingEnabled: true
+        LSSupportsOpeningDocumentsInPlace: true
+        ITSAppUsesNonExemptEncryption: false
+        NSPhotoLibraryAddUsageDescription: 把处理好的图片保存到相册。
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+schemes:
+  MeihuaToolbox:
+    build:
+      targets:
+        MeihuaToolbox: all
